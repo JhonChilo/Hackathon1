@@ -33,41 +33,39 @@ classDiagram
 direction BT
 class Estado {
 <<enumeration>>
-  + Estado() 
   +  CANJEADO
   +  VENDIDO
 }
 class Estudiante {
-  + Estudiante(Long, String, String, Long, List~Ticket~) 
-  + Estudiante() 
   - Long id
-  - String name
   - Long studentCode
-  - String email
   - List~Ticket~ tickets
+  - String name
+  - String email
 }
 class Funcion {
-  + Funcion(Long, String, String, LocalDateTime, Integer, Double, Integer, List~Ticket~) 
-  + Funcion() 
   - String descripcion
-  - Integer stock
   - Long id
-  - List~Ticket~ tickets
   - LocalDateTime fecha
-  - Integer duracion
-  - String nombre
+  - List~Ticket~ tickets
   - Double precio
+  - String nombre
+  - Integer duracion
+  - Integer stock
 }
 class Ticket {
-  + Ticket() 
-  + Ticket(Long, String, Estado, Funcion, Estudiante, LocalDateTime, Integer) 
-  - Integer cantidad
   - Funcion funcion
-  - LocalDateTime fechaCompra
-  - String qr
-  - Estudiante estudiante
   - Long id
   - Estado estado
+  - String qr
+  - Estudiante estudiante
+  - Integer cantidad
+  - LocalDateTime fechaCompra
+}
+class TicketRequest {
+  - Long estudianteId
+  - Integer cantidad
+  - Long funcionId
 }
 
 Estudiante "1" *--> "tickets *" Ticket 
