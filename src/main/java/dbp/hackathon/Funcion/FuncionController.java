@@ -38,4 +38,14 @@ public class FuncionController {
         return ResponseEntity.ok(funcionService.updateFuncion(id, funcion));
     }
 
+    @GetMapping("/{id}/earnings")
+    public ResponseEntity<Double> getTotalEarnings(@PathVariable Long id) {
+        try {
+            double earnings = funcionService.calculateTotalEarnings(id);
+            return ResponseEntity.ok(earnings);
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }

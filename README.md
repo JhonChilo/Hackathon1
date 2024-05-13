@@ -26,6 +26,53 @@ Tu misión será diseñar un sistema de venta de entradas que permita a estas or
 5. **Recaudación de Fondos:**
     - Implementar un endpoint que permita calcular la recaudación total de un evento en base a la cantidad de entradas vendidas y el precio de cada entrada 💰.
 
-A continuación, se presenta un diagrama de clases que describe las entidades del sistema y sus relaciones:
+A continuación, se presenta un diagrama de clases que describe las entidades del sistema y sus relaciones en mermaid:
 
+```mermaid
+classDiagram
+direction BT
+class Estado {
+<<enumeration>>
+  + Estado() 
+  +  CANJEADO
+  +  VENDIDO
+}
+class Estudiante {
+  + Estudiante(Long, String, String, Long, List~Ticket~) 
+  + Estudiante() 
+  - Long id
+  - String name
+  - Long studentCode
+  - String email
+  - List~Ticket~ tickets
+}
+class Funcion {
+  + Funcion(Long, String, String, LocalDateTime, Integer, Double, Integer, List~Ticket~) 
+  + Funcion() 
+  - String descripcion
+  - Integer stock
+  - Long id
+  - List~Ticket~ tickets
+  - LocalDateTime fecha
+  - Integer duracion
+  - String nombre
+  - Double precio
+}
+class Ticket {
+  + Ticket() 
+  + Ticket(Long, String, Estado, Funcion, Estudiante, LocalDateTime, Integer) 
+  - Integer cantidad
+  - Funcion funcion
+  - LocalDateTime fechaCompra
+  - String qr
+  - Estudiante estudiante
+  - Long id
+  - Estado estado
+}
 
+Estudiante "1" *--> "tickets *" Ticket 
+Funcion "1" *--> "tickets *" Ticket 
+Ticket "1" *--> "estado 1" Estado 
+Ticket "1" *--> "estudiante 1" Estudiante 
+Ticket "1" *--> "funcion 1" Funcion 
+```

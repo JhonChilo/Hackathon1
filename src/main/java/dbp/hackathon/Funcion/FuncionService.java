@@ -1,5 +1,7 @@
 package dbp.hackathon.Funcion;
 
+import dbp.hackathon.Ticket.TicketRepository;
+import dbp.hackathon.Ticket.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,6 +10,9 @@ public class FuncionService {
 
     @Autowired
     private FuncionRepository funcionRepository;
+
+    @Autowired
+    private TicketRepository ticketRepository;
 
     public Funcion saveFuncion(Funcion funcion) {
         return funcionRepository.save(funcion);
@@ -65,5 +70,12 @@ public class FuncionService {
                     funcion.setId(id);
                     return funcionRepository.save(funcion);
                 });
+    }
+
+    public double calculateTotalEarnings(Long funcionId) {
+        Funcion funcion = funcionRepository.findById(funcionId).orElseThrow(() -> new RuntimeException("Funcion not found"));
+        return funcion.getTickets().stream()
+                .mapToDouble(ticket -> ticket.getCantidad() * funcion.getPrecio())
+                .sum();
     }
 }

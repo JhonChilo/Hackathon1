@@ -32,7 +32,7 @@ public class TicketController {
         return ResponseEntity.ok(tickets);
     }
 
-    @PutMapping("/{id}/changeState")
+    @PatchMapping("/{id}/changeState")
     public ResponseEntity<?> changeTicketState(@PathVariable Long id) {
         try {
             ticketService.changeState(id);
