@@ -12,6 +12,11 @@ public class EstudianteController {
     @Autowired
     private EstudianteService estudianteService;
 
+    @GetMapping("/hola")
+    public String index() {
+        return "Hola pepe";
+    }
+
     @PostMapping
     public ResponseEntity<Estudiante> save(@RequestBody Estudiante estudiante) {
         return ResponseEntity.ok(estudianteService.save(estudiante));
