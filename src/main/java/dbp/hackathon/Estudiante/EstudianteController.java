@@ -14,7 +14,7 @@ public class EstudianteController {
 
     @GetMapping("/hola")
     public ResponseEntity<String> hola() {
-        return ResponseEntity.ok("Hola Mundo");
+        return ResponseEntity.ok("Hola Mundo, dbp esta en la casa");
     }
 
     @PostMapping
