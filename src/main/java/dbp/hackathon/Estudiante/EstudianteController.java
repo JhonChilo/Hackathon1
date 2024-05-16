@@ -13,8 +13,8 @@ public class EstudianteController {
     private EstudianteService estudianteService;
 
     @GetMapping("/hola")
-    public String index() {
-        return "Hola pepe";
+    public ResponseEntity<String> hola() {
+        return ResponseEntity.ok("Hola Mundo");
     }
 
     @PostMapping
