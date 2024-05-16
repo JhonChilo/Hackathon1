@@ -55,14 +55,18 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Log in to Amazon ECR
-        uses: aws-actions/amazon-ecr-login@v1
+        env:
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          USER_ID: ${{ secrets.USER_ID }}
+        run: |
+          aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $USER_ID.dkr.ecr.$AWS_REGION.amazonaws.com
 
       - name: Push Docker image to ECR
         env:
           USER_ID: ${{ secrets.USER_ID }}
           ECR_REPOSITORY_NAME: ${{ secrets.ECR_REPOSITORY_NAME }}
         run: |
-          docker push ${{ secrets.USER_ID }}.dkr.ecr.us-east-1.amazonaws.com/${{ secrets.ECR_REPOSITORY_NAME }}:latest
+          docker push $USER_ID.dkr.ecr.us-east-1.amazonaws.com/$ECR_REPOSITORY_NAME:latest
 
       - name: Update ECS service
         env:
