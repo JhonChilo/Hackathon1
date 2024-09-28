@@ -22,6 +22,7 @@ public class EstudianteController {
         return ResponseEntity.ok(estudianteService.save(estudiante));
     }
 
+
     @GetMapping("/{id}")
     public ResponseEntity<Estudiante> findById(@PathVariable Long id) {
         return ResponseEntity.ok(estudianteService.findById(id));
