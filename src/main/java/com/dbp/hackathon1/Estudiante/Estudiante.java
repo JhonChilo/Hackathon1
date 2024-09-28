@@ -1,4 +1,4 @@
-package dbp.hackathon.Estudiante;
+package com.dbp.hackathon1.Estudiante;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import dbp.hackathon.Ticket.Ticket;

@@ -1,9 +1,10 @@
-package dbp.hackathon.Ticket;
+package com.dbp.hackathon1.Ticket;
 
-import dbp.hackathon.Estudiante.Estudiante;
-import dbp.hackathon.Estudiante.EstudianteRepository;
-import dbp.hackathon.Funcion.Funcion;
-import dbp.hackathon.Funcion.FuncionRepository;
+
+import com.dbp.hackathon1.Estudiante.Estudiante;
+import com.dbp.hackathon1.Estudiante.EstudianteRepository;
+import com.dbp.hackathon1.Función.Funcion;
+import com.dbp.hackathon1.Función.FuncionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;

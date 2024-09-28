@@ -1,10 +1,11 @@
-package dbp.hackathon.Ticket;
+package com.dbp.hackathon1.Ticket;
 
+import com.dbp.hackathon1.Estudiante.Estudiante;
+import com.dbp.hackathon1.Función.Funcion;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import dbp.hackathon.Estudiante.Estudiante;
-import dbp.hackathon.Funcion.Funcion;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

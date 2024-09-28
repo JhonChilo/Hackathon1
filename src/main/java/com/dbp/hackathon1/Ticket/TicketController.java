@@ -1,4 +1,4 @@
-package dbp.hackathon.Ticket;
+package com.dbp.hackathon1.Ticket;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package dbp.hackathon.Funcion;
+package com.dbp.hackathon1.Función;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

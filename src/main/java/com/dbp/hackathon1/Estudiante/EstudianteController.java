@@ -1,4 +1,4 @@
-package dbp.hackathon.Estudiante;
+package com.dbp.hackathon1.Estudiante;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

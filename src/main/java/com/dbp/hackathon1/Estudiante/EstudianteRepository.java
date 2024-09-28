@@ -1,4 +1,4 @@
-package dbp.hackathon.Estudiante;
+package com.dbp.hackathon1.Estudiante;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

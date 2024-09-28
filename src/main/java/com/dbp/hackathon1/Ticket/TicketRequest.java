@@ -1,4 +1,4 @@
-package dbp.hackathon.Ticket;
+package com.dbp.hackathon1.Ticket;
 
 public class TicketRequest {
     private Long estudianteId;

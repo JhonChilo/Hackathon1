@@ -1,4 +1,4 @@
-package dbp.hackathon.Ticket;
+package com.dbp.hackathon1.Ticket;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

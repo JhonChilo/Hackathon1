@@ -1,7 +1,7 @@
-package dbp.hackathon.Funcion;
+package com.dbp.hackathon1.Función;
 
+import com.dbp.hackathon1.Ticket.Ticket;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import dbp.hackathon.Ticket.Ticket;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
